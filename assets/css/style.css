@@ -1,133 +1,276 @@
-/* ETIQUETAS / RESET CSS */
+/*
+  ============================================================
+  ESTA ES LA CAJA DE COLORES 🎨
+  ------------------------------------------------------------
+  El HTML pone las cosas. El CSS las hace BONITAS.
+  Aquí decimos: de qué color, qué tan grande, y dónde se pone cada cosa.
 
+  Se lee así:
+      a quién pinto {  qué le pinto: con qué;  }
+  ============================================================
+*/
+
+/* ETIQUETAS / RESET CSS */
+/*
+  Primero LIMPIAMOS.
+  El navegador viene con espacios y letras que él inventa solito,
+  y a veces no nos gustan. Así que los borramos y ponemos los nuestros.
+*/
+
+/*
+  El asterisco * significa "TODOS, absolutamente todos".
+  Es como decir: "¡niños, TODOS a la fila!"
+*/
 * {
+  /* margin es el aire de AFUERA de una cosa. En 0 = sin aire, todo pegadito. */
   margin: 0;
+
+  /* El tipo de letra. Si la primera no existe, prueba la siguiente, y así. */
   font-family:
     "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
     Arial, sans-serifc;
 }
+
+/* El body es TODA la página. Lo que le pongamos aquí lo hereda casi todo. */
 body {
+  /* La línea de abajo está DORMIDA (comentada): el navegador la ignora.
+     Si le quitas las marcas de comentario, se despierta y pinta el fondo
+     con una mezcla de colores (naranja y azul). */
   /* background: linear-gradient(to left, #f8cca0 0%, #a7d0f9 100%); */
+
+  /* color = el color de las LETRAS. rgb es una receta: rojo, verde, azul. */
   color: rgb(70, 0, 226);
 }
 
+/* Todas las listas (los menús) */
 ul {
+  /* Le quitamos los puntitos negros ● que salen delante de cada renglón. */
   list-style: none;
 }
 
+/* Solo los enlaces que están DENTRO del menú */
 menu {
   a {
+    /* Le quitamos la rayita de abajo que traen los enlaces. */
     text-decoration: none;
     color: rgb(80, 20, 80);
+
+    /* bolder = letra MÁS gordita, para que se lea fuerte. */
     font-weight: bolder;
+
+    /* &:hover = "cuando el ratón se pare encima". ¡Cambia de color! ✨ */
     &:hover {
       color: rgb(220, 30, 200);
     }
   }
 }
 
+/* Todos los demás enlaces de la página */
 a {
   text-decoration: none;
   color: rgb(100, 0, 42);
 }
 
 /* CLASES */
+/*
+  Una CLASE es un APODO.
+  En el HTML escribes class="tarjeta" y aquí, con el punto (.tarjeta),
+  dices cómo se pinta ese apodo. ¡Muchas cosas pueden usar el mismo apodo!
+*/
+
+/* Esta está vacía: no hace nada todavía. Está esperando su turno. */
 .cuerpo {
 }
 
+/*
+  Apodo "direccion": acomoda las cosas EN FILA, una al lado de la otra ➡️
+  Como cuando los niños se toman de la mano y caminan en fila.
+*/
 .direccion {
+  /* flex = modo "acomodar cosas". Sin esto, nada de lo de abajo funciona. */
   display: flex;
+
+  /* Las empuja al CENTRO, de izquierda a derecha. */
   justify-content: center;
+
+  /* Las empuja al CENTRO, de arriba a abajo. */
   align-items: center;
+
+  /* gap = un espacito entre cosa y cosa, para que no se aplasten. */
   gap: 10px;
 }
 
+/* El sombrero de arriba de la página */
 .cabecera {
+  /* El color del fondo (verde). */
   background-color: rgb(55, 200, 123);
+
+  /* padding es el aire de ADENTRO: separa el borde de lo que hay dentro. */
   padding: 10px;
+
   color: rgb(25, 130, 213);
+
+  /* larger = letra un poquito más grande de lo normal. */
   font-size: larger;
+
+  /* Esto de aquí adentro solo le pasa al logo que está DENTRO de la cabecera. */
   .logo {
+    /* Lo hacemos de 100 pixeles de ancho (más o menos como una galleta). */
     width: 100px;
   }
 }
 
+/*
+  Apodo "columna": acomoda las cosas UNA ENCIMA DE OTRA ⬇️
+  Como los bloques de una torre 🧱
+*/
 .columna {
   display: flex;
+
+  /* column = en columna (hacia abajo), no en fila. */
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
+
+/* La foto grandota de la portada */
 .hero {
   background:
+    /* Primero: una sombra negra transparente encima de la foto,
+       para que las letras blancas se lean bien. 0.6 = un poquito see-through. */
     linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    /* Después: la foto del árbol. no-repeat = no se repite como azulejos. */
     url("https://cdn.pixabay.com/photo/2023/08/07/13/44/tree-8175062_1280.jpg")
       no-repeat;
+
+  /* cover = la foto se estira para tapar TODO el espacio, sin dejar huecos. */
   background-size: cover;
+
+  /* fixed = la foto se queda QUIETA mientras tú bajas. ¡Efecto mágico! 🪄 */
   background-attachment: fixed;
+
+  /* min-height = mide por lo menos esto de alto. Puede crecer, pero no encoger. */
   min-height: 500px;
 
+  /* Letras blancas, porque el fondo es oscuro. */
   color: white;
 }
 
+/* Los botones para apretar 👆 */
 .cta-btn {
-  width: 70px;
-  height: 50px;
+  width: 70px; /* qué tan ancho */
+  height: 50px; /* qué tan alto */
+
+  /* El borde: una rayita roja de 1 pixel alrededor. */
   border: solid rgba(254, 15, 25, 0.6541654654165165) 1px;
+
+  /* border-radius = las esquinitas redondas, para que no pinchen 😊 */
   border-radius: 10px;
+
   background-color: rgb(80, 140, 18);
+
+  /* transition = que el cambio pase POQUITO A POCO (en 0.3 segundos),
+     y no de golpe. Así se ve suavecito. */
   transition:
     background-color 0.3s ease,
     transform 0.3s ease;
+
+  /* Cuando pones el ratón encima... */
   &:hover {
+    /* ...cambia de color... */
     background-color: rgb(180, 100, 200);
+
+    /* ...y CRECE un poquito (1.1 = 10% más grande). ¡Como si dijera "tócame"! */
     transform: scale(1.1);
   }
 }
 
+/* Cada tarjetita de servicios 🃏 */
 .tarjeta {
+  /* Nunca más ancha que esto, aunque haya sitio de sobra. */
   max-width: 200px;
+
   border: solid rgba(230, 32, 25, 0.3) 0.5px;
   border-radius: 10px;
   padding: 10px;
+
+  /* hidden = si algo se sale de la tarjeta, se esconde. No se asoma. */
   overflow: hidden;
+
+  /* La sombrita de abajo, para que parezca que la tarjeta FLOTA. */
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+
+  /* La foto que está DENTRO de la tarjeta */
   .img-card {
+    /* 100% = tan ancha como su tarjeta, ni más ni menos. */
     width: 100%;
+
+    /* cover = la foto se recorta sola para que no se vea aplastada. */
     object-fit: cover;
+
+    /* auto = el alto se calcula solito, para que no se deforme. */
     height: auto;
+
+    /* block = quita un espacio raro que sale debajo de las imágenes. */
     display: block;
   }
+
   transition: transform 0.3s ease-out;
+
+  /* Al pasar el ratón, la tarjeta SALTA hacia arriba 15 pixeles 🐰
+     (el número negativo -15 significa "hacia arriba"). */
   &:hover {
     transform: translateY(-15px);
   }
 }
+
+/* La caja que ordena TODAS las tarjetas */
 .grid-tarjetas {
+  /* grid = modo "cuadrícula": filas y columnas, como el cartón de huevos. */
   display: grid;
+
   /* Esta es la línea clave para que sea responsive sin media queries: */
+  /*
+    Traducido a fácil:
+    "Pon tantas tarjetas como quepan. Cada una mide mínimo 200px.
+     Si sobra sitio, que crezcan. Si no cabe, que baje a la fila de abajo."
+    Por eso en el celular se ven en fila de una, y en el compu de muchas. ✨
+  */
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px; /* El espacio entre las tarjetas (filas y columnas) */
   padding: 20px; /* Opcional: espacio alrededor de todo el grupo */
 }
 
+/* El formulario para escribirnos ✉️ */
 .formulario{
+  /* Las cajitas donde se escribe (nombre, correo y mensaje) */
   .text-box{
-    width: 210px;
-    border-radius: 10px;
-    border:solid rgba(80,32, 27, 0.1)
+    width: 210px; /* todas del mismo ancho, para que se vean ordenadas */
+    border-radius: 10px; /* esquinitas redondas */
+    border:solid rgba(80,32, 27, 0.1) /* un borde casi invisible, muy suave */
   }
 }
+
 /* ID */
+/*
+  Un ID es un NOMBRE PROPIO, y solo lo puede tener UNA cosa.
+  Como tu nombre: en la casa solo hay un tú.
+  En el CSS se escribe con almohadilla: #services
+*/
+
+/* La zona de Servicios */
 #services {
+  /* Verde muy clarito. El 0.1 del final = casi transparente. */
   background-color: rgba(150, 252, 52, 0.1);
-  padding: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding: 20px; /* aire por dentro */
+  margin-top: 10px; /* aire por fuera, arriba */
+  margin-bottom: 10px; /* aire por fuera, abajo */
 }
 
+/* La zona de Contáctanos */
 #contact {
+  /* Azul muy clarito. */
   background-color: rgba(3, 120, 240, 0.1);
   padding: 20px;
   margin-top: 10px;

@@ -1,26 +1,79 @@
+<!--
+  ============================================================
+  ESTA ES LA PÁGINA WEB 🌐
+  ------------------------------------------------------------
+  Imagina que la página es una CASA.
+  - El HTML (este archivo) son los LADRILLOS: pone las cosas.
+  - El CSS (el otro archivo) es la PINTURA: las hace bonitas.
+  ============================================================
+-->
+
+<!-- Esto le avisa al navegador: "¡ojo!, soy una página moderna". -->
 <!doctype html>
+
+<!-- Aquí empieza TODA la casa. lang="es" = "aquí se habla español". -->
 <html lang="es">
+  <!--
+    LA CABEZA de la casa.
+    Aquí van cosas que NO se ven, pero que ayudan mucho.
+    Es como el cerebro: piensa, pero no se ve.
+  -->
   <head>
+    <!-- Para que las letras raritas (á, é, ñ, ¡) se vean bien y no salgan feas. -->
     <meta charset="UTF-8" />
+
+    <!-- Para que la página quepa bien en el celular, y no se vea gigante. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Aquí llamamos a la caja de colores (el archivo CSS) para pintar la casa. -->
     <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- El dibujito chiquito que sale arriba, en la pestaña del navegador. -->
     <link
       rel="icon"
       type="image/x-icon"
       href="https://i.pinimg.com/474x/e9/da/0c/e9da0c83b0a7ec866e17c100079c9d88.jpg"
     />
+
+    <!-- El NOMBRE de la página. Sale escrito arriba, en la pestaña. -->
     <title>Documento</title>
   </head>
+
+  <!--
+    EL CUERPO de la casa.
+    TODO lo que está aquí adentro SÍ se ve con los ojos.
+  -->
   <body>
+    <!--
+      EL SOMBRERO de la página (header).
+      Siempre va arriba de todo: el logo, el menú y un botón.
+      Las clases "cabecera" y "direccion" son apodos para que el CSS
+      sepa a quién pintar y cómo acomodarlo.
+    -->
     <header class="cabecera direccion">
+      <!--
+        Un DIBUJO (una imagen).
+        src  = de dónde sacamos el dibujo.
+        alt  = qué dice el dibujo si no carga (para quien no puede verlo).
+      -->
       <img
         src="https://static.vecteezy.com/system/resources/thumbnails/024/553/853/small/colorful-eagle-head-logo-pop-art-style-eagle-face-sticker-pastel-cute-colors-ai-generated-png.png"
         alt=""
         class="logo"
       />
+
+      <!--
+        EL MENÚ: la listita de botoncitos para viajar por la página.
+        Es como el mapa del tesoro 🗺️
+      -->
       <menu>
+        <!-- <ul> = una LISTA. Cada <li> es un renglón de la lista. -->
         <ul class="direccion">
           <li>
+            <!--
+              <a> es un ENLACE: si lo tocas, te lleva a otro lado.
+              El "#inicio" significa: baja hasta la parte que se llama "inicio".
+            -->
             <a href="#inicio"> Inicio </a>
           </li>
           <li>
@@ -31,21 +84,64 @@
           </li>
         </ul>
       </menu>
+
+      <!--
+        Un BOTÓN para apretar 👆
+        "cta" quiere decir "llamada a la acción": invita a hacer algo.
+      -->
       <button type="button" class="cta-btn">cta</button>
     </header>
+
+    <!--
+      LA PARTE IMPORTANTE (main).
+      Es el contenido de verdad, lo que la gente vino a mirar.
+    -->
     <main>
       <!-- HERO -->
+      <!--
+        EL HERO: la primera foto grandota que ves al entrar.
+        Es como la portada de un cuento 📖
+        El id="inicio" es su NOMBRE, para que el menú lo encuentre.
+      -->
       <section id="inicio">
+        <!-- Un <div> es una CAJA para guardar cosas y acomodarlas juntas. -->
         <div class="hero columna">
+          <!-- <h1> = el título MÁS GRANDE de todos. Solo hay un jefe. -->
           <h1>Titulo</h1>
           <button type="button" class="cta-btn">Enviar</button>
         </div>
       </section>
 
       <!-- SERVICIOS -->
+      <!--
+        Aquí mostramos QUÉ COSAS sabemos hacer.
+        Se ven como tarjetitas, igual que las cartas de un juego 🃏
+      -->
       <section id="services">
+        <!-- <h2> = un título grande, pero un poquito más chico que el h1. -->
         <h2>Servicios</h2>
+
+        <!--
+          Esta caja acomoda las tarjetas en filas y columnas, ordenaditas,
+          como los huevos en su cartón 🥚
+        -->
         <div class="grid-tarjetas">
+          <!--
+            <article> = una TARJETA completa, que se entiende ella solita.
+            De aquí en adelante la misma tarjeta se repite 7 veces.
+            (Son gemelas: cambian solo si les cambias el texto o la foto.)
+          -->
+          <article class="tarjeta">
+            <img class="img-card" src="https://static.vecteezy.com/system/resources/thumbnails/011/153/364/small/3d-website-developer-working-on-laptop-illustration-png.png" alt="">
+            <!-- Esta cajita junta el título y el texto de la tarjeta. -->
+            <div>
+              <h2> Tarjeta</h2>
+              <!-- <p> = un párrafo, o sea, un pedacito de texto para leer. -->
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, rerum dolore!</p>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2 (igualita a la de arriba) -->
           <article class="tarjeta">
             <img class="img-card" src="https://static.vecteezy.com/system/resources/thumbnails/011/153/364/small/3d-website-developer-working-on-laptop-illustration-png.png" alt="">
             <div>
@@ -53,6 +149,8 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, rerum dolore!</p>
             </div>
           </article>
+
+          <!-- Tarjeta 3 -->
           <article class="tarjeta">
             <img class="img-card" src="https://static.vecteezy.com/system/resources/thumbnails/011/153/364/small/3d-website-developer-working-on-laptop-illustration-png.png" alt="">
             <div>
@@ -60,6 +158,8 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, rerum dolore!</p>
             </div>
           </article>
+
+          <!-- Tarjeta 4 -->
           <article class="tarjeta">
             <img class="img-card" src="https://static.vecteezy.com/system/resources/thumbnails/011/153/364/small/3d-website-developer-working-on-laptop-illustration-png.png" alt="">
             <div>
@@ -67,6 +167,8 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, rerum dolore!</p>
             </div>
           </article>
+
+          <!-- Tarjeta 5 -->
           <article class="tarjeta">
             <img class="img-card" src="https://static.vecteezy.com/system/resources/thumbnails/011/153/364/small/3d-website-developer-working-on-laptop-illustration-png.png" alt="">
             <div>
@@ -74,6 +176,8 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, rerum dolore!</p>
             </div>
           </article>
+
+          <!-- Tarjeta 6 -->
           <article class="tarjeta">
             <img class="img-card" src="https://static.vecteezy.com/system/resources/thumbnails/011/153/364/small/3d-website-developer-working-on-laptop-illustration-png.png" alt="">
             <div>
@@ -81,13 +185,8 @@
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, rerum dolore!</p>
             </div>
           </article>
-          <article class="tarjeta">
-            <img class="img-card" src="https://static.vecteezy.com/system/resources/thumbnails/011/153/364/small/3d-website-developer-working-on-laptop-illustration-png.png" alt="">
-            <div>
-              <h2> Tarjeta</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, rerum dolore!</p>
-            </div>
-          </article>
+
+          <!-- Tarjeta 7 (la última) -->
           <article class="tarjeta">
             <img class="img-card" src="https://static.vecteezy.com/system/resources/thumbnails/011/153/364/small/3d-website-developer-working-on-laptop-illustration-png.png" alt="">
             <div>
@@ -99,20 +198,43 @@
       </section>
 
       <!-- CONTACTANOS -->
+      <!--
+        Aquí la gente nos escribe un mensajito ✉️
+        Es como dejar una carta en el buzón.
+      -->
       <section id="contact">
         <h1>Contactanos</h1>
         <div>
+          <!--
+            Un <form> es un FORMULARIO: una hoja con espacios para rellenar,
+            como cuando pintas tu nombre en la hoja del cole.
+          -->
           <form action="" class="columna formulario">
+            <!--
+              <input type="text"> = una rayita para escribir palabras.
+              placeholder = la letra gris que dice qué hay que escribir ahí.
+            -->
             <input type="text" name="Nombre" id="" class="text-box" placeholder="Nombre">
+
+            <!-- type="email" = aquí solo se escriben correos (con su @). -->
             <input class="text-box" type="email" name="" id=""
             placeholder="Correo">
+
+            <!-- <textarea> = una caja GRANDE, para escribir mucho, mucho. -->
             <textarea class="text-box" name="" id="" cols="30" rows="10"
-            placeholder="Escribe tu mensaje"></textarea>       
-          <input type="submit" class="cta-btn" value="Enviar">  
+            placeholder="Escribe tu mensaje"></textarea>
+
+            <!-- type="submit" = el botón que MANDA la carta. ¡Adiós, mensaje! -->
+          <input type="submit" class="cta-btn" value="Enviar">
           </form>
         </div>
       </section>
     </main>
+
+    <!--
+      LOS ZAPATOS de la página (footer): lo último de todo, hasta abajo.
+      Ahora está vacío, pero aquí van cosas como el teléfono o el copyright.
+    -->
     <footer></footer>
   </body>
 </html>
