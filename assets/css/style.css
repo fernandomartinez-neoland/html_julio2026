@@ -1,5 +1,36 @@
+/* ETIQUETAS */
+
 * {
   margin: 0;
 }
 body {
+  background: linear-gradient(to left, #f8cca0 0%, #a7d0f9 100%);
+  color: rgb(70, 0, 226);
+}
+
+ul{
+  list-style: none;
+}
+/* CLASES */
+.cuerpo {
+}
+
+
+
+.direccion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.cabecera {
+  background-color: rgb(55, 200, 123);
+  padding: 10px;
+  color: rgb(25, 130, 213);
+  font-size: larger;
+}
+
+/* ID */
+#identificador {
 }
